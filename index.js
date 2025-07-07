@@ -1,20 +1,18 @@
-const express = require("express");
+const express  = require("express");
 const app = express();
-
-require("./config/user.db");
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const userRouter = require("./router/user.router");
-app.use(express.json());
 
-app.get("/", (req, res) => {
-    return res.status(200).json({
-        message: "Welcome to the express server!"
-    })
+require("./config/user.db");
+
+app.get("/", (req,res) => {
+    res.send("Welcome to student portal server");
 });
 
-app.use("/user", userRouter)
+app.use(express.json());
+app.use("/user", userRouter);
 
 app.listen(PORT, () => {
-   console.log("Server is running on port 5000");
-})
+    console.log("Server is running on port", 5000);
+});

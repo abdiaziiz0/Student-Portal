@@ -4,14 +4,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "index.js"
+    "dev": "index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "degrees": "^0.0.2",
+    "exposure": "^0.1.1",
     "express": "^5.1.0",
-    "mongoose": "^8.15.1"
+    "mongoose": "^8.16.1"
   }
 }
